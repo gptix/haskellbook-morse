@@ -60,8 +60,7 @@ main = do
       case arg of
         "from" -> convertFromMorse
         "to"   -> convertToMorse
-          _    -> argError
-  _ -> argError
+        _      -> argError
 
   where argError = do
          putStrLn "Please specify the\

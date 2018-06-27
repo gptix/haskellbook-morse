@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: aa15cb96973b7c76dc35b906eba379436e1102b3ca117afbf19c08356e54113c
+-- hash: 258b47ab62f1e55cad8cb90c59f2e0e1ab4fb026fdbc1801a0b1539c0f92d559
 
 name:           morse
 version:        0.1.0.0
@@ -30,12 +30,11 @@ library
       src
   build-depends:
       base >=4.7 && <5
-    , containers
   exposed-modules:
-      Morse
-  other-modules:
       Lib
       Main
+      Morse
+  other-modules:
       Paths_morse
   default-language: Haskell2010
 
@@ -46,7 +45,6 @@ executable morse-exe
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
-    , containers
     , morse
   other-modules:
       Paths_morse

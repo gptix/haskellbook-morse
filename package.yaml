@@ -24,6 +24,8 @@ dependencies:
 
 library:
   source-dirs: src
+  exposed-modules: Morse
+  dependencies: containers
 
 executables:
   morse-exe:
@@ -35,6 +37,7 @@ executables:
     - -with-rtsopts=-N
     dependencies:
     - morse
+    - containers
 
 tests:
   morse-test:

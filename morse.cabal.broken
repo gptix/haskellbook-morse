@@ -1,0 +1,66 @@
+-- This file has been generated from package.yaml by hpack version 0.20.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 629cef351c63ed2764f5cbde573d90b083a0d6e236a1809d2fe1adc872900cbf
+
+name:           morse
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/gptix/haskellbook-morse#readme>
+homepage:       https://github.com/gptix/haskellbook-morse#readme
+bug-reports:    https://github.com/gptix/haskellbook-morse/issues
+author:         George P. Taylor IX
+maintainer:     jud.taylor@gmail.com
+copyright:      2018 George P. Taylor IX
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
+
+extra-source-files:
+    ChangeLog.m
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/gptix/haskellbook-morse
+
+library
+  hs-source-dirs:
+      src
+  build-depends:
+                base >=4.7 && <5
+              , containers
+              , QuickCheck
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_morse
+  default-language: Haskell2010
+
+executable morse
+  main-is: Main.hs
+  hs-source-dirs:   src
+  ghc-options:      -Wall -fwarn-tabs
+  build-depends:    base >=4.7 && <5
+                  , morse
+                  , containers
+                  , QuickCheck
+  other-modules:
+      Paths_morse
+  default-language: Haskell2010
+
+test-suite morse-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+              , morse
+              , containers
+              , QuickCheck
+  other-modules:
+      Paths_morse
+  default-language: Haskell2010
