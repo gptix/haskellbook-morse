@@ -60,13 +60,16 @@ main = do
       case arg of
         "from" -> convertFromMorse
         "to"   -> convertToMorse
-        _      -> argError
-    _      -> argError
+        _      -> argError $ arg ++ " arg error"
+    _      -> argError $ (head mode) ++ " mode error" 
 
-  where argError = do
-          putStrLn "Please specify the\
+  where argError x = do
+          putStrLn x
+          {-"Please specify the\
                    \ first argument\
                    \ as being 'from' or\
                    \ 'to' morse,\
                    \ such as: morse to"
+
+-}
           exitFailure
